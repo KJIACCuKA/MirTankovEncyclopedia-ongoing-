@@ -16,7 +16,6 @@ class NationsCollectionViewCell: UICollectionViewCell {
         imageView.translatesAutoresizingMaskIntoConstraints = false
         imageView.backgroundColor = .clear
         imageView.contentMode = .scaleAspectFit
-        imageView.clipsToBounds = true
         return imageView
     }()
     
