@@ -9,7 +9,7 @@ import UIKit
 
 class TypesCollectionViewCell: UICollectionViewCell {
     
-    private lazy var typeNameLabel = UILabel(text: "test", textColor: .lightGray, font: .italicSystemFont(ofSize: 10))
+    private lazy var typeNameLabel = UILabel(text: "test", textColor: .lightGray, font: .italicSystemFont(ofSize: 12))
     
     private lazy var typeImageView: UIImageView = {
         let imageView = UIImageView()
@@ -38,7 +38,7 @@ class TypesCollectionViewCell: UICollectionViewCell {
     private func setupConstraints() {
         NSLayoutConstraint.activate([
             typeImageView.centerXAnchor.constraint(equalTo: self.centerXAnchor),
-            typeImageView.topAnchor.constraint(equalTo: self.topAnchor, constant: 20),
+            typeImageView.topAnchor.constraint(equalTo: self.topAnchor),
             typeImageView.heightAnchor.constraint(equalToConstant: 70),
             typeImageView.widthAnchor.constraint(equalToConstant: 70),
             

@@ -9,7 +9,7 @@ import UIKit
 
 class NationsCollectionViewCell: UICollectionViewCell {
     
-    private lazy var nationNameLabel = UILabel(text: "test", textColor: .lightGray, font: .italicSystemFont(ofSize: 10))
+    private lazy var nationNameLabel = UILabel(text: "test", textColor: .lightGray, font: .italicSystemFont(ofSize: 12))
     
     private lazy var nationImageView: UIImageView = {
         let imageView = UIImageView()
@@ -38,9 +38,9 @@ class NationsCollectionViewCell: UICollectionViewCell {
     private func setupConstraints() {
         NSLayoutConstraint.activate([
             nationImageView.centerXAnchor.constraint(equalTo: self.centerXAnchor),
-            nationImageView.topAnchor.constraint(equalTo: self.topAnchor, constant: 20),
-            nationImageView.heightAnchor.constraint(equalToConstant: 60),
-            nationImageView.widthAnchor.constraint(equalToConstant: 60),
+            nationImageView.topAnchor.constraint(equalTo: self.topAnchor),
+            nationImageView.heightAnchor.constraint(equalToConstant: 70),
+            nationImageView.widthAnchor.constraint(equalToConstant: 70),
             
             nationNameLabel.centerXAnchor.constraint(equalTo: self.centerXAnchor),
             nationNameLabel.topAnchor.constraint(equalTo: nationImageView.bottomAnchor, constant: 10)
