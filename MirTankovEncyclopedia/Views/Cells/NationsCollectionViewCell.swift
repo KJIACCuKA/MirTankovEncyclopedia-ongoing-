@@ -48,7 +48,7 @@ class NationsCollectionViewCell: UICollectionViewCell {
     }
     
     func setupInfoForCell(indexPath: IndexPath) {
-        let nations = Nations.nations[indexPath.row]
+        let nations = NationsAndTypes.nations[indexPath.row]
         nationImageView.image = nations.image
         nationNameLabel.text = nations.name
     }

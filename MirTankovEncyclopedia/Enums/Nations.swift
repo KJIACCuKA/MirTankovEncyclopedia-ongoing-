@@ -7,23 +7,27 @@
 
 import UIKit
 
-enum Nations {
+enum NationsAndTypes {
     static let nations: [NationsAndTypesModel] = [
-        NationsAndTypesModel(name: "СССР", image: UIImage(named: "ussr") ?? UIImage()),
-        NationsAndTypesModel(name: "ГЕРМАНИЯ", image: UIImage(named: "germany") ?? UIImage()),
-        NationsAndTypesModel(name: "США", image: UIImage(named: "usa") ?? UIImage()),
-        NationsAndTypesModel(name: "КИТАЙ", image: UIImage(named: "china") ?? UIImage()),
-        NationsAndTypesModel(name: "ФРАНЦИЯ", image: UIImage(named: "france") ?? UIImage()),
-        NationsAndTypesModel(name: "ВЕЛИКОБРИТАНИЯ", image: UIImage(named: "uk") ?? UIImage()),
-        NationsAndTypesModel(name: "ЯПОНИЯ", image: UIImage(named: "japan") ?? UIImage()),
-        NationsAndTypesModel(name: "ЧЕХОСЛОВАКИЯ", image: UIImage(named: "czech") ?? UIImage()),
-        NationsAndTypesModel(name: "ШВЕЦИЯ", image: UIImage(named: "sweden") ?? UIImage()),
-        NationsAndTypesModel(name: "ПОЛЬША", image: UIImage(named: "poland") ?? UIImage()),
-        NationsAndTypesModel(name: "ИТАЛИЯ", image: UIImage(named: "italy") ?? UIImage())
+        NationsAndTypesModel(name: "СССР", image: UIImage(named: "ussr")),
+        NationsAndTypesModel(name: "ГЕРМАНИЯ", image: UIImage(named: "germany")),
+        NationsAndTypesModel(name: "США", image: UIImage(named: "usa")),
+        NationsAndTypesModel(name: "КИТАЙ", image: UIImage(named: "china")),
+        NationsAndTypesModel(name: "ФРАНЦИЯ", image: UIImage(named: "france")),
+        NationsAndTypesModel(name: "ВЕЛИКОБРИТАНИЯ", image: UIImage(named: "uk")),
+        NationsAndTypesModel(name: "ЯПОНИЯ", image: UIImage(named: "japan")),
+        NationsAndTypesModel(name: "ЧЕХОСЛОВАКИЯ", image: UIImage(named: "czech")),
+        NationsAndTypesModel(name: "ШВЕЦИЯ", image: UIImage(named: "sweden")),
+        NationsAndTypesModel(name: "ПОЛЬША", image: UIImage(named: "poland")),
+        NationsAndTypesModel(name: "ИТАЛИЯ", image: UIImage(named: "italy"))
     ]
     
     static let types: [NationsAndTypesModel] = [
-        NationsAndTypesModel(name: "ЛЕГКИЕ ТАНКИ", image: <#T##UIImage?#>)
+        NationsAndTypesModel(name: "ЛЕГКИЕ ТАНКИ", image: UIImage(named: "lighttank")),
+        NationsAndTypesModel(name: "СРЕДНИЕ ТАНКИ", image: UIImage(named: "mediumtank")),
+        NationsAndTypesModel(name: "ТЯЖЕЛЫЕ ТАНКИ", image: UIImage(named: "heavytank")),
+        NationsAndTypesModel(name: "ПТ-САУ", image: UIImage(named: "at-spg")),
+        NationsAndTypesModel(name: "САУ", image: UIImage(named: "spg")),
     ]
         
 }
