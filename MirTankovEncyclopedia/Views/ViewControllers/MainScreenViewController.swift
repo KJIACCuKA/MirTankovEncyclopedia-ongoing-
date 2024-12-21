@@ -6,8 +6,11 @@
 //
 
 import UIKit
+import SafariServices
 
 class MainScreenViewController: UIViewController {
+    
+    // MARK: - Private Properties
     
     private lazy var mainImageView = UIImageView(image: UIImage(named: "wotMain") ?? UIImage(), contentMode: .scaleAspectFill)
     
@@ -18,6 +21,7 @@ class MainScreenViewController: UIViewController {
         button.backgroundColor = .wotOrange
         button.translatesAutoresizingMaskIntoConstraints = false
         button.layer.cornerRadius = 10
+        button.addTarget(self, action: #selector(gameSiteButtonTapped), for: .touchUpInside)
         button.titleLabel?.font = .systemFont(ofSize: 16, weight: .semibold)
         return button
     }()
@@ -33,6 +37,8 @@ class MainScreenViewController: UIViewController {
         button.addTarget(self, action: #selector(goButtonTapped), for: .touchUpInside)
         return button
     }()
+    
+    // MARK: - View Life Cycle
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -40,6 +46,8 @@ class MainScreenViewController: UIViewController {
         setupUI()
         setupConstraints()
     }
+    
+    // MARK: - Private Methods
     
     private func setupUI() {
         view.addSubview(mainImageView)
@@ -66,10 +74,33 @@ class MainScreenViewController: UIViewController {
         ])
     }
     
-    @objc func goButtonTapped() {
+    // MARK: - Actions
+    
+    @objc private func goButtonTapped() {
         let nationsVC = NationsAndTypesViewController()
         navigationController?.pushViewController(nationsVC, animated: true)
+    }
+    
+    @objc private func gameSiteButtonTapped() {
+        goToSafari()
     }
 
 }
 
+// MARK: - SFSafariViewControllerDelegate
+
+extension MainScreenViewController: SFSafariViewControllerDelegate {
+    
+    private func goToSafari() {
+        let urlString = "https://tanki.su"
+        if let url = URL(string: urlString) {
+            let safariVC = SFSafariViewController(url: url)
+            safariVC.delegate = self
+            present(safariVC, animated: true)
+        }
+    }
+    
+    func safariViewControllerDidFinish(_ controller: SFSafariViewController) {
+        dismiss(animated: true)
+    }
+}

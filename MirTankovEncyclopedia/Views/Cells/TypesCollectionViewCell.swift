@@ -9,6 +9,8 @@ import UIKit
 
 class TypesCollectionViewCell: UICollectionViewCell {
     
+    // MARK: - Private Properties
+    
     private lazy var typeNameLabel = UILabel(text: "test", textColor: .lightGray, font: .italicSystemFont(ofSize: 12))
     
     private lazy var typeImageView: UIImageView = {
@@ -19,6 +21,8 @@ class TypesCollectionViewCell: UICollectionViewCell {
         return imageView
     }()
     
+    // MARK: - Initializers
+    
     override init(frame: CGRect) {
         super.init(frame: frame)
         setupUI()
@@ -28,6 +32,8 @@ class TypesCollectionViewCell: UICollectionViewCell {
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
+    
+    // MARK: - Private Methods
     
     private func setupUI() {
         self.addSubview(typeNameLabel)
@@ -45,6 +51,8 @@ class TypesCollectionViewCell: UICollectionViewCell {
             typeNameLabel.topAnchor.constraint(equalTo: typeImageView.bottomAnchor, constant: 10)
             ])
     }
+    
+    // MARK: - Public Methods
     
     func setupInfoForCell(indexPath: IndexPath) {
         let types = NationsAndTypes.types[indexPath.row]

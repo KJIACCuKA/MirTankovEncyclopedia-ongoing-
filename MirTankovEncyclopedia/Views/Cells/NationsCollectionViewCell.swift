@@ -9,6 +9,8 @@ import UIKit
 
 class NationsCollectionViewCell: UICollectionViewCell {
     
+    // MARK: - Private Properties
+    
     private lazy var nationNameLabel = UILabel(text: "test", textColor: .lightGray, font: .italicSystemFont(ofSize: 12))
     
     private lazy var nationImageView: UIImageView = {
@@ -19,6 +21,8 @@ class NationsCollectionViewCell: UICollectionViewCell {
         return imageView
     }()
     
+    // MARK: - Initializers
+    
     override init(frame: CGRect) {
         super.init(frame: frame)
         setupUI()
@@ -28,6 +32,8 @@ class NationsCollectionViewCell: UICollectionViewCell {
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
+    
+    // MARK: - Private Methods
     
     private func setupUI() {
         self.addSubview(nationNameLabel)
@@ -45,6 +51,8 @@ class NationsCollectionViewCell: UICollectionViewCell {
             nationNameLabel.topAnchor.constraint(equalTo: nationImageView.bottomAnchor, constant: 10)
             ])
     }
+    
+    // MARK: - Public Methods
     
     func setupInfoForCell(indexPath: IndexPath) {
         let nations = NationsAndTypes.nations[indexPath.row]

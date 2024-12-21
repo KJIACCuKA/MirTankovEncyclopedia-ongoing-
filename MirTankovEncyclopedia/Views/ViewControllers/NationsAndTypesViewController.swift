@@ -9,6 +9,8 @@ import UIKit
 
 class NationsAndTypesViewController: UIViewController {
     
+    // MARK: - Private Properties
+    
     private lazy var nationsAndTypesCollectionView: UICollectionView = {
         let layout = UICollectionViewFlowLayout()
         let collectionView = UICollectionView(frame: .zero, collectionViewLayout: layout)
@@ -46,12 +48,16 @@ class NationsAndTypesViewController: UIViewController {
 //        return availableWidth / CGFloat(sectionLayout.columnCount)
 //    }
     
+    // MARK: - View Life Cycle
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = .wotGray
         setupUI()
         setupConstraints()
     }
+    
+    // MARK: - Private Methods
     
     private func setupUI() {
         view.addSubview(nationsAndTypesCollectionView)
@@ -70,6 +76,8 @@ class NationsAndTypesViewController: UIViewController {
         ])
     }
 }
+
+// MARK: - UICollectionViewDataSource
 
 extension NationsAndTypesViewController: UICollectionViewDataSource {
     
@@ -105,6 +113,8 @@ extension NationsAndTypesViewController: UICollectionViewDataSource {
     
 }
 
+// MARK: - UICollectionViewDelegate
+
 extension NationsAndTypesViewController: UICollectionViewDelegate {
     func collectionView(_ collectionView: UICollectionView,
                         viewForSupplementaryElementOfKind kind: String,
@@ -123,6 +133,8 @@ extension NationsAndTypesViewController: UICollectionViewDelegate {
         return UICollectionReusableView()
     }
 }
+
+// MARK: - UICollectionViewDelegateFlowLayout
 
 extension NationsAndTypesViewController: UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView,

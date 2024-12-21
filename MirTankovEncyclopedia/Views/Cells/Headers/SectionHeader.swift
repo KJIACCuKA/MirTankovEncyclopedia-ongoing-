@@ -8,7 +8,12 @@
 import UIKit
 
 final class SectionHeader: UICollectionReusableView {
+    
+    // MARK: - Private Properties
+    
     private lazy var titleLabel = UILabel(text: "test", textColor: .white, font: .boldSystemFont(ofSize: 20))
+    
+    // MARK: - Initializers
     
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -26,6 +31,8 @@ final class SectionHeader: UICollectionReusableView {
     required init?(coder: NSCoder) {
         super.init(coder: coder)
     }
+    
+    // MARK: - Public Methods
     
     func config(with title: String) {
         titleLabel.text = title
