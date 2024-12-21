@@ -19,6 +19,7 @@ class NationsAndTypesViewController: UIViewController {
         collectionView.backgroundColor = .clear
         collectionView.delegate = self
         collectionView.dataSource = self
+        collectionView.isScrollEnabled = false
         collectionView.allowsMultipleSelection = true
         collectionView.register(NationsCollectionViewCell.self, forCellWithReuseIdentifier: "\(NationsCollectionViewCell.self)")
         collectionView.register(TypesCollectionViewCell.self, forCellWithReuseIdentifier: "\(TypesCollectionViewCell.self)")
@@ -107,9 +108,36 @@ extension NationsAndTypesViewController: UICollectionViewDataSource {
         default:
             return UICollectionViewCell()
         }
-        
     }
     
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        switch indexPath.row {
+        case 0:
+            print("USSR")
+        case 1:
+            print("Germany")
+        case 2:
+            print("USA")
+        case 3:
+            print("China")
+        case 4:
+            print("France")
+        case 5:
+            print("UK")
+        case 6:
+            print("Japan")
+        case 7:
+            print("Czech")
+        case 8:
+            print("Sweden")
+        case 9:
+            print("Poland")
+        case 10:
+            print("Italy")
+        default:
+            print("Error")
+        }
+    }
     
 }
 
