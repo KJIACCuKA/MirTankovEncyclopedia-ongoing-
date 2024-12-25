@@ -65,8 +65,8 @@ final class TanksTableViewCell: UITableViewCell {
     
     // MARK: - Public Methods
     
-    func setupInfoForCell(indexPath: IndexPath) {
-        let tankInfo = SwedenTanks.swedenTanks[indexPath.row]
+    func setupInfoForTanks(tankInfo: [TankModel], indexPath: IndexPath) {
+        let tankInfo = tankInfo[indexPath.row]
         flagImageView.image = tankInfo.contry
         typeImageView.image = tankInfo.type
         lvlLabel.text = tankInfo.tankLVL

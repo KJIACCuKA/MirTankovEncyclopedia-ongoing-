@@ -1,13 +1,13 @@
 //
-//  SwedenViewController.swift
+//  PolandViewController.swift
 //  MirTankovEncyclopedia
 //
-//  Created by Никита Козловский on 21.12.2024.
+//  Created by Никита Козловский on 25.12.2024.
 //
 
 import UIKit
 
-final class SwedenViewController: UIViewController {
+final class PolandViewController: UIViewController {
     
     private lazy var tanksTableView: UITableView = {
         let tableView = UITableView()
@@ -23,7 +23,7 @@ final class SwedenViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        title = "ШВЕЦИЯ"
+        title = "Польша"
         view.backgroundColor = .wotGray
         setupUI()
     }
@@ -39,20 +39,20 @@ final class SwedenViewController: UIViewController {
     }
 }
 
-extension SwedenViewController: UITableViewDataSource {
+extension PolandViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        SwedenTanks.swedenTanks.count
+        PolandTanks.polandTanks.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: "\(TanksTableViewCell.self)", for: indexPath) as? TanksTableViewCell else {
             return UITableViewCell()
         }
-        cell.setupInfoForTanks(tankInfo: SwedenTanks.swedenTanks, indexPath: indexPath)
+        cell.setupInfoForTanks(tankInfo: PolandTanks.polandTanks, indexPath: indexPath)
         return cell
     }
 }
 
-extension SwedenViewController: UITableViewDelegate {
+extension PolandViewController: UITableViewDelegate {
     
 }
