@@ -9,13 +9,13 @@ import UIKit
 
 extension UILabel {
     
-    convenience init(text: String, textColor: UIColor, font: UIFont) {
+    convenience init(text: String, textColor: UIColor, font: UIFont, numberOfLines: Int) {
         self.init()
         
         self.text = text
         self.translatesAutoresizingMaskIntoConstraints = false
         self.textColor = textColor
         self.font = font
-        self.numberOfLines = .bitWidth
+        self.numberOfLines = numberOfLines
     }
 }

@@ -11,7 +11,7 @@ class NationsCollectionViewCell: UICollectionViewCell {
     
     // MARK: - Private Properties
     
-    private lazy var nationNameLabel = UILabel(text: "test", textColor: .lightGray, font: .italicSystemFont(ofSize: 12))
+    private lazy var nationNameLabel = UILabel(text: "test", textColor: .lightGray, font: .italicSystemFont(ofSize: 12), numberOfLines: 2)
     
     private lazy var nationImageView: UIImageView = {
         let imageView = UIImageView()

@@ -76,6 +76,11 @@ class NationsAndTypesViewController: UIViewController {
 //            nationsAndTypesCollectionView.heightAnchor.constraint(equalToConstant: totalCollectionHeight)
         ])
     }
+    
+    func goToNationsVC(viewController: UIViewController) {
+        let viewController = viewController
+        navigationController?.pushViewController(viewController, animated: true)
+    }
 }
 
 // MARK: - UICollectionViewDataSource
@@ -129,9 +134,9 @@ extension NationsAndTypesViewController: UICollectionViewDataSource {
         case 7:
             print("Czech")
         case 8:
-            print("Sweden")
+            goToNationsVC(viewController: SwedenViewController())
         case 9:
-            print("Poland")
+            goToNationsVC(viewController: PolandViewController())
         case 10:
             print("Italy")
         default:

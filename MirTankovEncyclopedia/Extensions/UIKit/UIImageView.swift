@@ -9,9 +9,10 @@ import UIKit
 
 extension UIImageView {
     
-    convenience init(image: UIImage, contentMode: UIView.ContentMode) {
+    convenience init(image: UIImage, contentMode: UIView.ContentMode, tintColor: UIColor) {
         self.init()
         
+        self.tintColor = tintColor
         self.image = image
         self.translatesAutoresizingMaskIntoConstraints = false
         self.backgroundColor = .clear
