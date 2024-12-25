@@ -11,7 +11,7 @@ final class SectionHeader: UICollectionReusableView {
     
     // MARK: - Private Properties
     
-    private lazy var titleLabel = UILabel(text: "test", textColor: .white, font: .boldSystemFont(ofSize: 20))
+    private lazy var titleLabel = UILabel(text: "test", textColor: .white, font: .boldSystemFont(ofSize: 20), numberOfLines: 2)
     
     // MARK: - Initializers
     

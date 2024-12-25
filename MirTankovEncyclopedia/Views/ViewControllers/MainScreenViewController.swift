@@ -12,7 +12,7 @@ class MainScreenViewController: UIViewController {
     
     // MARK: - Private Properties
     
-    private lazy var mainImageView = UIImageView(image: UIImage(named: "wotMain") ?? UIImage(), contentMode: .scaleAspectFill)
+    private lazy var mainImageView = UIImageView(image: UIImage(named: "wotMain") ?? UIImage(), contentMode: .scaleAspectFill, tintColor: .clear)
     
     private lazy var gameSiteButton: UIButton = {
         let button = UIButton()

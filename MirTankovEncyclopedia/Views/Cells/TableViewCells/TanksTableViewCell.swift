@@ -9,14 +9,12 @@ import UIKit
 
 final class TanksTableViewCell: UITableViewCell {
     
-    private lazy var flagImageView = UIImageView(image: UIImage(), contentMode: .scaleAspectFit)
-    private lazy var iconImageView = UIImageView(image: UIImage(), contentMode: .scaleAspectFit)
-    private lazy var typeImageView = UIImageView(image: UIImage(), contentMode: .scaleAspectFit)
+    private lazy var flagImageView = UIImageView(image: UIImage(), contentMode: .scaleAspectFit, tintColor: .lightGray)
+    private lazy var iconImageView = UIImageView(image: UIImage(), contentMode: .scaleAspectFit, tintColor: .lightGray)
+    private lazy var typeImageView = UIImageView(image: UIImage(), contentMode: .scaleAspectFit, tintColor: .lightGray)
     
-    private lazy var lvlLabel = UILabel(text: "", textColor: .white, font: .systemFont(ofSize: 12))
-    private lazy var tankNameLabel = UILabel(text: "", textColor: .white, font: .systemFont(ofSize: 12))
-    
-    private lazy var horizontalStackView = UIStackView(arrangedSubviews: [flagImageView, typeImageView, lvlLabel, iconImageView, tankNameLabel], axis: .horizontal, spacing: 1, distribution: .equalCentering)
+    private lazy var lvlLabel = UILabel(text: "", textColor: .white, font: .systemFont(ofSize: 12), numberOfLines: .bitWidth)
+    private lazy var tankNameLabel = UILabel(text: "", textColor: .white, font: .systemFont(ofSize: 12), numberOfLines: .bitWidth)
     
     
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
@@ -31,18 +29,33 @@ final class TanksTableViewCell: UITableViewCell {
     }
     
     private func setupUI() {
-        self.addSubview(horizontalStackView)
+        self.addSubview(flagImageView)
+        self.addSubview(iconImageView)
+        self.addSubview(typeImageView)
+        self.addSubview(lvlLabel)
+        self.addSubview(tankNameLabel)
     }
     
     private func setupConstraints() {
         NSLayoutConstraint.activate([
-            horizontalStackView.topAnchor.constraint(equalTo: self.topAnchor, constant: 15),
-            horizontalStackView.bottomAnchor.constraint(equalTo: self.bottomAnchor, constant: -15),
-            horizontalStackView.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: 16),
-            horizontalStackView.trailingAnchor.constraint(equalTo: self.trailingAnchor, constant: -70),
             
-            flagImageView.heightAnchor.constraint(equalToConstant: 70),
-            flagImageView.widthAnchor.constraint(equalToConstant: 70),
+            flagImageView.centerYAnchor.constraint(equalTo: self.centerYAnchor),
+            flagImageView.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: 20),
+            
+            typeImageView.centerYAnchor.constraint(equalTo: self.centerYAnchor),
+            typeImageView.leadingAnchor.constraint(equalTo: flagImageView.trailingAnchor, constant: 20),
+            
+            lvlLabel.centerYAnchor.constraint(equalTo: self.centerYAnchor),
+            lvlLabel.leadingAnchor.constraint(equalTo: typeImageView.trailingAnchor, constant: 20),
+            
+            iconImageView.centerYAnchor.constraint(equalTo: self.centerYAnchor),
+            iconImageView.leadingAnchor.constraint(equalTo: lvlLabel.trailingAnchor, constant: 20),
+            
+            tankNameLabel.trailingAnchor.constraint(equalTo: self.trailingAnchor, constant: -50),
+            tankNameLabel.centerYAnchor.constraint(equalTo: self.centerYAnchor),
+            
+            flagImageView.heightAnchor.constraint(equalToConstant: 30),
+            flagImageView.widthAnchor.constraint(equalToConstant: 30),
             typeImageView.heightAnchor.constraint(equalToConstant: 20),
             typeImageView.widthAnchor.constraint(equalToConstant: 20),
             iconImageView.heightAnchor.constraint(equalToConstant: 50),

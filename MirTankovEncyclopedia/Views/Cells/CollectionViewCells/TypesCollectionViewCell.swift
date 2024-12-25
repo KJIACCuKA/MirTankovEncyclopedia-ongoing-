@@ -11,7 +11,7 @@ class TypesCollectionViewCell: UICollectionViewCell {
     
     // MARK: - Private Properties
     
-    private lazy var typeNameLabel = UILabel(text: "test", textColor: .lightGray, font: .italicSystemFont(ofSize: 12))
+    private lazy var typeNameLabel = UILabel(text: "test", textColor: .lightGray, font: .italicSystemFont(ofSize: 12), numberOfLines: 2)
     
     private lazy var typeImageView: UIImageView = {
         let imageView = UIImageView()
