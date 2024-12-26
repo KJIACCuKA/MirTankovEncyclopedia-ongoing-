@@ -37,6 +37,9 @@ final class TanksTableViewCell: UITableViewCell {
     }
     
     private func setupConstraints() {
+        
+        tankNameLabel.textAlignment = .right
+        
         NSLayoutConstraint.activate([
             
             flagImageView.centerYAnchor.constraint(equalTo: self.centerYAnchor),
@@ -59,7 +62,8 @@ final class TanksTableViewCell: UITableViewCell {
             typeImageView.heightAnchor.constraint(equalToConstant: 20),
             typeImageView.widthAnchor.constraint(equalToConstant: 20),
             iconImageView.heightAnchor.constraint(equalToConstant: 50),
-            iconImageView.widthAnchor.constraint(equalToConstant: 50)
+            iconImageView.widthAnchor.constraint(equalToConstant: 50),
+            tankNameLabel.widthAnchor.constraint(equalToConstant: 150)
         ])
     }
     
