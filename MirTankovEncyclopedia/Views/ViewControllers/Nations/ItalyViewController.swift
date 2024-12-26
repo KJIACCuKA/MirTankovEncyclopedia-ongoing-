@@ -23,7 +23,6 @@ final class ItalyViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        title = "Италия"
         view.backgroundColor = .wotGray
         setupUI()
     }

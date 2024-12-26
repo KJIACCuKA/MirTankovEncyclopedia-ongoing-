@@ -23,7 +23,6 @@ final class SwedenViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        title = "ШВЕЦИЯ"
         view.backgroundColor = .wotGray
         setupUI()
     }

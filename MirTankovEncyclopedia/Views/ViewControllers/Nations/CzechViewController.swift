@@ -1,13 +1,13 @@
 //
-//  PolandViewController.swift
+//  CzechViewController.swift
 //  MirTankovEncyclopedia
 //
-//  Created by Никита Козловский on 25.12.2024.
+//  Created by Никита Козловский on 26.12.2024.
 //
 
 import UIKit
 
-final class PolandViewController: UIViewController {
+final class CzechViewController: UIViewController {
     
     private lazy var tanksTableView: UITableView = {
         let tableView = UITableView()
@@ -38,20 +38,20 @@ final class PolandViewController: UIViewController {
     }
 }
 
-extension PolandViewController: UITableViewDataSource {
+extension CzechViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        PolandTanks.polandTanks.count
+        CzechTanks.czechTanks.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: "\(TanksTableViewCell.self)", for: indexPath) as? TanksTableViewCell else {
             return UITableViewCell()
         }
-        cell.setupInfoForTanks(tankInfo: PolandTanks.polandTanks, indexPath: indexPath)
+        cell.setupInfoForTanks(tankInfo: CzechTanks.czechTanks, indexPath: indexPath)
         return cell
     }
 }
 
-extension PolandViewController: UITableViewDelegate {
+extension CzechViewController: UITableViewDelegate {
     
 }

@@ -132,7 +132,7 @@ extension NationsAndTypesViewController: UICollectionViewDataSource {
         case 6:
             print("Japan")
         case 7:
-            print("Czech")
+            goToNationsVC(viewController: CzechViewController())
         case 8:
             goToNationsVC(viewController: SwedenViewController())
         case 9:
