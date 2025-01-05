@@ -9,16 +9,16 @@ import UIKit
 
 final class JapanViewController: UIViewController {
     
-    private var searchBarIsEmpty: Bool {
+    var searchBarIsEmpty: Bool {
         guard let text = searchController.searchBar.text else { return false }
         return text.isEmpty
     }
     
-    private var isFiltering: Bool {
+    var isFiltering: Bool {
         return searchController.isActive && !searchBarIsEmpty
     }
     
-    private lazy var searchController = UISearchController(searchResultsController: nil)
+    lazy var searchController = UISearchController(searchResultsController: nil)
     
     private lazy var tanksTableView: UITableView = {
         let tableView = UITableView()
@@ -97,6 +97,4 @@ extension JapanViewController: UISearchResultsUpdating {
         })
         tanksTableView.reloadData()
     }
-    
-    
 }

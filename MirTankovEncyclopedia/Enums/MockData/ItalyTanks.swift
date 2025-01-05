@@ -68,4 +68,6 @@ enum ItalyTanks {
         
         TankModel(contry: UIImage(named: "italyTank") ?? UIImage(), type: UIImage(systemName: "arrowtriangle.down.fill") ?? UIImage(), tankLVL: "I", tankIcon: UIImage(named: "fiat3000") ?? UIImage(), tankName: "Fiat 3000", premium: false),
     ]
+    
+    static var filteredItalyTanks: [TankModel] = []
 }
