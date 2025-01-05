@@ -98,3 +98,24 @@ extension ItalyViewController: UISearchResultsUpdating {
         tanksTableView.reloadData()
     }
 }
+
+//MARK: - SwiftUI
+
+import SwiftUI
+struct ItalyTanksScreen: PreviewProvider {
+    static var previews: some View {
+        ContainerView().edgesIgnoringSafeArea(.all)
+    }
+    
+    struct ContainerView: UIViewControllerRepresentable {
+        func updateUIViewController(_ uiViewController: ItalyTanksScreen.ContainerView.UIViewControllerType, context: UIViewControllerRepresentableContext<ItalyTanksScreen.ContainerView>) {
+            
+        }
+        
+        
+        let italyScreen = ItalyViewController()
+        func makeUIViewController(context: UIViewControllerRepresentableContext<ItalyTanksScreen.ContainerView>) -> ItalyViewController {
+            return italyScreen
+        }
+    }
+}

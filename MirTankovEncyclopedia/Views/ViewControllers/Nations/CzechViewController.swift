@@ -99,3 +99,24 @@ extension CzechViewController: UISearchResultsUpdating {
         tanksTableView.reloadData()
     }
 }
+
+//MARK: - SwiftUI
+
+import SwiftUI
+struct CzechTanksScreen: PreviewProvider {
+    static var previews: some View {
+        ContainerView().edgesIgnoringSafeArea(.all)
+    }
+    
+    struct ContainerView: UIViewControllerRepresentable {
+        func updateUIViewController(_ uiViewController: CzechTanksScreen.ContainerView.UIViewControllerType, context: UIViewControllerRepresentableContext<CzechTanksScreen.ContainerView>) {
+            
+        }
+        
+        
+        let czechScreen = CzechViewController()
+        func makeUIViewController(context: UIViewControllerRepresentableContext<CzechTanksScreen.ContainerView>) -> CzechViewController {
+            return czechScreen
+        }
+    }
+}

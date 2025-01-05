@@ -209,3 +209,25 @@ extension NationsAndTypesViewController: UICollectionViewDelegateFlowLayout {
 //        sectionLayout.columnSpacing
 //    }
 }
+
+
+//MARK: - SwiftUI
+
+import SwiftUI
+struct NationsAndTypesScreen: PreviewProvider {
+    static var previews: some View {
+        ContainerView().edgesIgnoringSafeArea(.all)
+    }
+    
+    struct ContainerView: UIViewControllerRepresentable {
+        func updateUIViewController(_ uiViewController: NationsAndTypesScreen.ContainerView.UIViewControllerType, context: UIViewControllerRepresentableContext<NationsAndTypesScreen.ContainerView>) {
+            
+        }
+        
+        
+        let mainScreen = NationsAndTypesViewController()
+        func makeUIViewController(context: UIViewControllerRepresentableContext<NationsAndTypesScreen.ContainerView>) -> NationsAndTypesViewController {
+            return mainScreen
+        }
+    }
+}

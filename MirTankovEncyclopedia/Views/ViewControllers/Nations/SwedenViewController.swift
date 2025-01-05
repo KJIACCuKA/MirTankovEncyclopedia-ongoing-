@@ -96,3 +96,24 @@ extension SwedenViewController: UISearchResultsUpdating {
         tanksTableView.reloadData()
     }
 }
+
+//MARK: - SwiftUI
+
+import SwiftUI
+struct SwedenTanksScreen: PreviewProvider {
+    static var previews: some View {
+        ContainerView().edgesIgnoringSafeArea(.all)
+    }
+    
+    struct ContainerView: UIViewControllerRepresentable {
+        func updateUIViewController(_ uiViewController: SwedenTanksScreen.ContainerView.UIViewControllerType, context: UIViewControllerRepresentableContext<SwedenTanksScreen.ContainerView>) {
+            
+        }
+        
+        
+        let swedenScreen = SwedenViewController()
+        func makeUIViewController(context: UIViewControllerRepresentableContext<SwedenTanksScreen.ContainerView>) -> SwedenViewController {
+            return swedenScreen
+        }
+    }
+}

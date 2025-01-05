@@ -96,3 +96,25 @@ extension PolandViewController: UISearchResultsUpdating {
         tanksTableView.reloadData()
     }
 }
+
+//MARK: - SwiftUI
+
+import SwiftUI
+struct PolandTanksScreen: PreviewProvider {
+    static var previews: some View {
+        ContainerView().edgesIgnoringSafeArea(.all)
+    }
+    
+    struct ContainerView: UIViewControllerRepresentable {
+        func updateUIViewController(_ uiViewController: PolandTanksScreen.ContainerView.UIViewControllerType, context: UIViewControllerRepresentableContext<PolandTanksScreen.ContainerView>) {
+            
+        }
+        
+        
+        let polandScreen = PolandViewController()
+        func makeUIViewController(context: UIViewControllerRepresentableContext<PolandTanksScreen.ContainerView>) -> PolandViewController {
+            return polandScreen
+        }
+    }
+}
+
