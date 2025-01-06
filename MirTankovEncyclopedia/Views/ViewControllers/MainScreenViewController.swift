@@ -104,3 +104,24 @@ extension MainScreenViewController: SFSafariViewControllerDelegate {
         dismiss(animated: true)
     }
 }
+
+//MARK: - SwiftUI
+
+import SwiftUI
+struct MainScreen: PreviewProvider {
+    static var previews: some View {
+        ContainerView().edgesIgnoringSafeArea(.all)
+    }
+    
+    struct ContainerView: UIViewControllerRepresentable {
+        func updateUIViewController(_ uiViewController: MainScreen.ContainerView.UIViewControllerType, context: UIViewControllerRepresentableContext<MainScreen.ContainerView>) {
+            
+        }
+        
+        
+        let mainScreen = MainScreenViewController()
+        func makeUIViewController(context: UIViewControllerRepresentableContext<MainScreen.ContainerView>) -> MainScreenViewController {
+            return mainScreen
+        }
+    }
+}

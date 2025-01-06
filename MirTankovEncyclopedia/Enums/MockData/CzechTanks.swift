@@ -59,4 +59,6 @@ enum CzechTanks {
         TankModel(contry: UIImage(named: "czechTank") ?? UIImage(), type: UIImage(systemName: "arrowtriangle.down.fill") ?? UIImage(), tankLVL: "II", tankIcon: UIImage(named: "kolo") ?? UIImage(), tankName: "Kolohousenka", premium: false),
         
     ]
+    
+    static var filteredCzechTanks: [TankModel] = []
 }
