@@ -82,7 +82,10 @@ extension JapanViewController: UITableViewDataSource {
 }
 
 extension JapanViewController: UITableViewDelegate {
-    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let detailTankInfoVC = DetailTankInfoViewController()
+        navigationController?.pushViewController(detailTankInfoVC, animated: true)
+    }
 }
 
 extension JapanViewController: UISearchResultsUpdating {

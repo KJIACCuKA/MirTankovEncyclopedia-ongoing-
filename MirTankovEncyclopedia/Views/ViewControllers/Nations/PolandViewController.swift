@@ -80,7 +80,10 @@ extension PolandViewController: UITableViewDataSource {
 }
 
 extension PolandViewController: UITableViewDelegate {
-    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let detailTankInfoVC = DetailTankInfoViewController()
+        navigationController?.pushViewController(detailTankInfoVC, animated: true)
+    }
 }
 
 extension PolandViewController: UISearchResultsUpdating {
@@ -90,8 +93,8 @@ extension PolandViewController: UISearchResultsUpdating {
     }
     
     private func filterContentForSearchText(searchText: String) {
-        JapanTanks.filteredJapanTanks = JapanTanks.japanTanks.filter({ (japanTank: TankModel) in
-            return japanTank.tankName.lowercased().contains(searchText.lowercased())
+        PolandTanks.filteredPolandTanks = PolandTanks.polandTanks.filter({ (polandTank: TankModel) in
+            return polandTank.tankName.lowercased().contains(searchText.lowercased())
         })
         tanksTableView.reloadData()
     }

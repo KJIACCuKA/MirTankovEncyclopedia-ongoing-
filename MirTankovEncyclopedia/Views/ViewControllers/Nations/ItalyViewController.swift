@@ -82,7 +82,10 @@ extension ItalyViewController: UITableViewDataSource {
 }
 
 extension ItalyViewController: UITableViewDelegate {
-    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let detailTankInfoVC = DetailTankInfoViewController()
+        navigationController?.pushViewController(detailTankInfoVC, animated: true)
+    }
 }
 
 extension ItalyViewController: UISearchResultsUpdating {
@@ -92,8 +95,8 @@ extension ItalyViewController: UISearchResultsUpdating {
     }
     
     private func filterContentForSearchText(searchText: String) {
-        CzechTanks.filteredCzechTanks = CzechTanks.czechTanks.filter({ (czechTank: TankModel) in
-            return czechTank.tankName.lowercased().contains(searchText.lowercased())
+        ItalyTanks.filteredItalyTanks = ItalyTanks.italyTanks.filter({ (italyTank: TankModel) in
+            return italyTank.tankName.lowercased().contains(searchText.lowercased())
         })
         tanksTableView.reloadData()
     }

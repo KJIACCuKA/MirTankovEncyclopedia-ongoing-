@@ -84,6 +84,11 @@ extension CzechViewController: UITableViewDataSource {
 
 extension CzechViewController: UITableViewDelegate {
     
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let detailTankInfoVC = DetailTankInfoViewController()
+        navigationController?.pushViewController(detailTankInfoVC, animated: true)
+    }
+    
 }
 
 extension CzechViewController: UISearchResultsUpdating {
